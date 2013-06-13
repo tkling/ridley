@@ -55,9 +55,9 @@ module Ridley
 
           case response.exit_code
           when 0
-            log.info "Successfully ran SSH command on: '#{host}' as: '#{options[:ssh][:user]}'"
+            log.info "Successfully ran SSH command #{command} on: '#{host}' as: '#{options[:ssh][:user]}'"
           else
-            log.info "Successfully ran SSH command on: '#{host}' as: '#{options[:ssh][:user]}' but it failed"
+            log.info "Successfully ran SSH command #{command} on: '#{host}' as: '#{options[:ssh][:user]}' but it failed"
           end
         end
       end

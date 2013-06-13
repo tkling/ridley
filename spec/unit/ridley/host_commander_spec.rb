@@ -7,7 +7,7 @@ describe Ridley::HostCommander do
     let(:host) { "reset.riotgames.com" }
     let(:command) { "ls" }
     let(:options) do
-      { ssh: { port: 22 }, winrm: { port: 5985 } }
+      { ssh: { port: 22 }, winrm: { port: 5985 }, sudo: false }
     end
 
     context "when communicating to a unix node" do
@@ -40,7 +40,7 @@ describe Ridley::HostCommander do
   describe "#bootstrap" do
     let(:host) { "reset.riotgames.com" }
     let(:options) do
-      { ssh: { port: 22 }, winrm: { port: 5985 } }
+      { ssh: { port: 22 }, winrm: { port: 5985 }, sudo: true }
     end
 
     context "when communicating to a unix node" do
@@ -73,7 +73,7 @@ describe Ridley::HostCommander do
   describe "#chef_client" do
     let(:host) { "reset.riotgames.com" }
     let(:options) do
-      { ssh: { port: 22 }, winrm: { port: 5985 } }
+      { ssh: { port: 22 }, winrm: { port: 5985 }, sudo: false }
     end
 
     context "when communicating to a unix node" do
@@ -107,7 +107,7 @@ describe Ridley::HostCommander do
     let(:host) { "reset.riotgames.com" }
     let(:secret) { "something_secret" }
     let(:options) do
-      { ssh: { port: 22 }, winrm: { port: 5985 } }
+      { ssh: { port: 22 }, winrm: { port: 5985 }, sudo: false }
     end
 
     context "when communicating to a unix node" do
@@ -141,7 +141,7 @@ describe Ridley::HostCommander do
     let(:host) { "reset.riotgames.com" }
     let(:command_lines) { ["line one"] }
     let(:options) do
-      { ssh: { port: 22 }, winrm: { port: 5985 } }
+      { ssh: { port: 22 }, winrm: { port: 5985 }, sudo: false }
     end
 
     context "when communicating to a unix node" do
