@@ -127,15 +127,15 @@ module Ridley
     # Executes a Chef run on the node
     #
     # @return [HostConnector::Response]
-    def chef_run
-      resource.chef_run(self.public_hostname)
+    def chef_run(sudo = false)
+      resource.chef_run(self.public_hostname, sudo)
     end
 
     # Puts the configured encrypted data bag secret on the node
     #
     # @return [HostConnector::Response]
-    def put_secret
-      resource.put_secret(self.public_hostname)
+    def put_secret(sudo = false)
+      resource.put_secret(self.public_hostname, sudo)
     end
 
     # Merges the instaniated nodes data with the given data and updates
